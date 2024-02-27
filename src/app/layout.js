@@ -1,4 +1,4 @@
-import { NextAuthProvider } from '@/comps/providers/nextAuthProvider'
+import { NextAuthProvider } from '@/app/providers/nextAuthProvider'
 import './globals.css'
 import siteConstants from "@/utils/globals/siteConstants"
 
@@ -10,6 +10,9 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
+      <head>
+        <link rel="shortcut icon" href="#" />
+      </head>
       <body>
         <NextAuthProvider>
           {children}

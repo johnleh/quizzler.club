@@ -1,16 +1,13 @@
-import Loading from '@/comps/loading'
-import { getServerSession } from "next-auth/next"
-import { authOptions } from "./api/auth/[...nextauth]/route"
+"use client"
+import { useSession } from "next-auth/react";
 import { redirect } from 'next/navigation'
 
 const Home = async () => {
-  const session = await getServerSession(authOptions)
+  const session = useSession()
   if(session) {
     redirect('/dashboard')
-    return <Loading/>
   } else {
     redirect('/signIn')
-    return <Loading/>
   }
 }
 

@@ -1,8 +1,9 @@
 "use client"
-import { signOut} from 'next-auth/react'
+import { useSession } from "next-auth/react";
 import Link from 'next/link'
-const NavBar = ({session}) => {
- 
+import {signOut} from 'next-auth/react'
+
+const NavBar =  ({session}) => {
     const name = session?.user?.name
 
     return (
